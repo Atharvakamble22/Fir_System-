@@ -1,0 +1,78 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onRegister()">
+  <div>
+    <label for="firstName">First Name</label>
+    <input id="firstName" formControlName="firstName" />
+    <div *ngIf="submitted && registrationForm.controls['firstName'].errors">
+      <small>First Name is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="middleName">Middle Name</label>
+    <input id="middleName" formControlName="middleName" />
+    <div *ngIf="submitted && registrationForm.controls['middleName'].errors">
+      <small>Middle Name is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="lastName">Last Name</label>
+    <input id="lastName" formControlName="lastName" />
+    <div *ngIf="submitted && registrationForm.controls['lastName'].errors">
+      <small>Last Name is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="fullName">Full Name</label>
+    <input id="fullName" [value]="fullName" readonly />
+  </div>
+  
+
+  <div>
+    <label for="mobileNumber">Mobile Number</label>
+    <input id="mobileNumber" formControlName="mobileNumber" />
+    <div *ngIf="submitted && registrationForm.controls['mobileNumber'].errors">
+      <small>Mobile Number must be 10 digits</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="photo">Photo (JPEG, JPG, PNG under 1MB)</label>
+    <input
+      type="file"
+      id="photo"
+      (change)="onFileChange($event)"
+      accept=".jpeg, .jpg, .png"
+    />
+    <div *ngIf="photoError">
+      <small>{{ photoError }}</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" />
+    <div *ngIf="submitted && registrationForm.controls['email'].errors">
+      <small>Email is required and must be valid</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password" />
+    <div *ngIf="submitted && registrationForm.controls['password'].errors">
+      <small>Password is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="confirmPassword" formControlName="confirmPassword" />
+    <div *ngIf="submitted && registrationForm.controls['confirmPassword'].errors">
+      <small>Confirm Password must match Password</small>
+    </div>
+  </div>
+
+  <button type="submit">Register</button>
+</form>

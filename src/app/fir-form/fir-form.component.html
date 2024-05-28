@@ -1,0 +1,180 @@
+<form [formGroup]="firForm" (ngSubmit)="onSubmit()">
+  <h2>FIR Form</h2>
+
+  <div>
+    <label for="district">District</label>
+    <input id="district" formControlName="district" />
+    <div *ngIf="firForm.get('district')?.invalid && firForm.get('district')?.touched">
+      <small>District is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="policeStation">Police Station</label>
+    <select id="policeStation" formControlName="policeStation">
+      <option value="">Select</option>
+      <option value="station1">Alankar Police Station</option>
+      <option value="station2">Deccan Police Station</option>
+      <option value="station3">Parvati Police Station</option>
+      <option value="station4">Balgandharv Police Station</option>
+    </select>
+    <div *ngIf="firForm.get('policeStation')?.invalid && firForm.get('policeStation')?.touched">
+      <small>Police Station is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="act">ACT</label>
+    <select id="act" formControlName="act">
+      <option value="">Select</option>
+      <option value="IPC-1860">IPC 1860</option>
+      <option value="IPC-373">IPC 373</option>
+      <option value="IPC-353">IPC 353</option>
+      <option value="IPC-420">IPC 420</option>
+      <option value="IPC-302">IPC 302</option>
+    </select>
+    <div *ngIf="firForm.get('act')?.invalid && firForm.get('act')?.touched">
+      <small>ACT is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="firNumber">FIR Number</label>
+    <input id="firNumber" formControlName="firNumber" readonly />
+  </div>
+
+  <div>
+    <label for="dateAndTimeOfFIR">Date & Time of FIR</label>
+    <input type="datetime-local" formControlName="dateAndTimeOfFIR" />
+    <div *ngIf="firForm.get('dateAndTimeOfFIR')?.invalid && firForm.get('dateAndTimeOfFIR')?.touched">
+      <small>Date & Time of FIR is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="generalDiaryReferenceNumber">General Diary Reference Number</label>
+    <input id="generalDiaryReferenceNumber" formControlName="generalDiaryReferenceNumber" />
+    <div *ngIf="firForm.get('generalDiaryReferenceNumber')?.invalid && firForm.get('generalDiaryReferenceNumber')?.touched">
+      <small>General Diary Reference Number is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="typeOfInformation">Type of Information</label>
+    <select id="typeOfInformation" formControlName="typeOfInformation">
+      <option value="">Select</option>
+      <option value="public">Public Informed</option>
+      <option value="victim">Victim Informed</option>
+      <option value="criminal">Criminal Informed</option>
+    </select>
+    <div *ngIf="firForm.get('typeOfInformation')?.invalid && firForm.get('typeOfInformation')?.touched">
+      <small>Type of Information is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="placeOfOccurrence">Place of Occurrence</label>
+    <input id="placeOfOccurrence" formControlName="placeOfOccurrence" />
+    <div *ngIf="firForm.get('placeOfOccurrence')?.invalid && firForm.get('placeOfOccurrence')?.touched">
+      <small>Place of Occurrence is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="complainantFullName">Complainant / Informant Full Name</label>
+    <input id="complainantFullName" formControlName="complainantFullName" />
+    <div *ngIf="firForm.get('complainantFullName')?.invalid && firForm.get('complainantFullName')?.touched">
+      <small>Full Name is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="complainantDOB">Complainant / Informant Date of Birth</label>
+    <input type="date" formControlName="complainantDOB" />
+    <div *ngIf="firForm.get('complainantDOB')?.invalid && firForm.get('complainantDOB')?.touched">
+      <small>Date of Birth is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="complainantNationality">Complainant / Informant Nationality</label>
+    <input id="complainantNationality" formControlName="complainantNationality" />
+    <div *ngIf="firForm.get('complainantNationality')?.invalid && firForm.get('complainantNationality')?.touched">
+      <small>Nationality is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="complainantAadhaarNumber">Complainant / Informant Aadhaar Number</label>
+    <input id="complainantAadhaarNumber" formControlName="complainantAadhaarNumber" />
+    <div *ngIf="firForm.get('complainantAadhaarNumber')?.invalid && firForm.get('complainantAadhaarNumber')?.touched">
+      <small>Aadhaar Number must be 12 digits</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="complainantOccupation">Complainant / Informant Occupation</label>
+    <input id="complainantOccupation" formControlName="complainantOccupation" />
+    <div *ngIf="firForm.get('complainantOccupation')?.invalid && firForm.get('complainantOccupation')?.touched">
+      <small>Occupation is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="complainantMobileNumber">Complainant / Informant Mobile Number</label>
+    <input id="complainantMobileNumber" formControlName="complainantMobileNumber" />
+    <div *ngIf="firForm.get('complainantMobileNumber')?.invalid && firForm.get('complainantMobileNumber')?.touched">
+      <small>Mobile Number must be 10 digits</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="complainantAddress">Complainant / Informant Address</label>
+    <input id="complainantAddress" formControlName="complainantAddress" />
+    <div *ngIf="firForm.get('complainantAddress')?.invalid && firForm.get('complainantAddress')?.touched">
+      <small>Address is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="suspectName">Suspect Name</label>
+    <input id="suspectName" formControlName="suspectName" />
+    <div *ngIf="firForm.get('suspectName')?.invalid && firForm.get('suspectName')?.touched">
+      <small>Suspect Name is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="suspectAddress">Suspect Address</label>
+    <input id="suspectAddress" formControlName="suspectAddress" />
+    <div *ngIf="firForm.get('suspectAddress')?.invalid && firForm.get('suspectAddress')?.touched">
+      <small>Suspect Address is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="enquiryOfficerName">Enquiry Officer Name</label>
+    <input id="enquiryOfficerName" formControlName="enquiryOfficerName" />
+    <div *ngIf="firForm.get('enquiryOfficerName')?.invalid && firForm.get('enquiryOfficerName')?.touched">
+      <small>Enquiry Officer Name is required</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="enquiryOfficerRank">Enquiry Officer Rank</label>
+    <select formControlName="enquiryOfficerRank">
+      <option value="">Select</option>
+      <option value="constable">Constable</option>
+      <option value="headConstable">Head Constable</option>
+      <option value="asi">ASI</option>
+      <option value="psi">PSI</option>
+      <option value="api">API</option>
+      <option value="pi">PI</option>
+    </select>
+    <div *ngIf="firForm.get('enquiryOfficerRank')?.invalid && firForm.get('enquiryOfficerRank')?.touched">
+      <small>Rank is required</small>
+    </div>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

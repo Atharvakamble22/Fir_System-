@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>FIR Report</h2>
+  
+  <button (click)="exportToExcel()">Export to Excel</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>FIR Number</th>
+        <th>District</th>
+        <th>Police Station</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fir of firList">
+        <td>{{ fir.firNumber }}</td>
+        <td>{{ fir.district }}</td>
+        <td>{{ fir.policeStation }}</td>
+        <td>
+          <button (click)="editFIR(fir)">Edit</button>
+          <button (click)="deleteFIR(fir)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

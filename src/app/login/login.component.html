@@ -1,0 +1,28 @@
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div>
+      <label for="username">Username</label>
+      <input id="username" formControlName="username" />
+      <div *ngIf="submitted && loginForm.controls['username'].errors">
+        <small>Username is required</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" />
+      <div *ngIf="submitted && loginForm.controls['password'].errors">
+        <small>Password is required</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="captcha">Captcha: {{ captcha }}</label>
+      <input id="captcha" formControlName="captcha" />
+      <div *ngIf="submitted && loginForm.controls['captcha'].errors">
+        <small>Captcha is incorrect</small>
+      </div>
+    </div>
+  
+    <button type="submit">Login</button>
+  </form>
+`  
